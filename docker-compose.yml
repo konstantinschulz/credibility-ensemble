@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  alpaca:
+    build: alpaca
+    image: konstantinschulz/credibility-score-service:v2
+  #    ports:
+  #      - "8000:8000"
+  cfc:
+    build: covid19-fact-checking/fact_checking_app
+    image: konstantinschulz/covid19-fact-checking:v1
+#    ports:
+#      - "8000:8000"
+  cs:
+    build: credibilityScore
+    image: konstantinschulz/credibilityscore:v1
+    ports:
+      - "8000:8000"
